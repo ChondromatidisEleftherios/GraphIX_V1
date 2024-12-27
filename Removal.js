@@ -104,7 +104,7 @@ async function remove_person_ns() {
         temp = j.flat(); //Κάνω τους υποπινακες, μερος ενος μονοδιαστατου πινακα//
     if (temp.includes(idvalue))
     { 
-     temp2 = temp.toSpliced(temp.indexOf(idvalue),2);   
+     temp2 = temp.toSpliced(temp.indexOf(idvalue),2);
         pairs = temp2.reduce((acc, val, index) => {
         if (index % 2 === 0) {
             acc.push([val]);
@@ -112,7 +112,7 @@ async function remove_person_ns() {
             acc[acc.length - 1].push(val);
         }
         return acc;
-    }, []);
+    }, []); 
     m.set(i, pairs); //Φτιαχνω ξανα το map//
 }
 }

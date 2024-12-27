@@ -42,6 +42,20 @@ form
 	margin-bottom: 135px;
 }
 
+.cont3
+{
+	z-index: 3;
+	display:flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 0px;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 135px;
+}
+
+
 .cont4
 {
 	z-index: 3;

@@ -51,6 +51,7 @@ async function connect_users() {
     fill_set();
     let idvalue = id.value.toString().trim();
     let idvalue2 = id2.value.toString().trim();
+    let 
     if (!(idlist.has(idvalue))) {
         x.innerHTML = "ID " + idvalue + " does not exist!";
     } else if (!(idlist.has(idvalue2))) {

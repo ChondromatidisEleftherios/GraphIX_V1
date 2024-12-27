@@ -65,6 +65,13 @@ async function change_weight() {
     let weightvalue=weight.value.toString().trim();
     let idvalue = id.value.toString().trim();
     let idvalue2 = id2.value.toString().trim();
+    weightvalue=parseFloat(weightvalue);
+    if (!((weightvalue >=  0.01)&&(weightvalue <= 0.99)))
+    {
+        x.innerHTML = "Weight is not in the appropriate range!";
+    }
+    else
+    {
     if (!(idlist.has(idvalue))) {
         x.innerHTML = "ID " + idvalue + " does not exist!";
     } else if (!(idlist.has(idvalue2))) {
@@ -72,6 +79,8 @@ async function change_weight() {
     } else {
         insert_users_to_map();
         let connected = false;
+            weightvalue = (Math.round(weightvalue * 100) / 100);
+        weightvalue = weightvalue.toString();
         for ([i, j] of m) {
             if (idvalue === i[0]) {
             temp=j.flat();
@@ -123,6 +132,7 @@ async function change_weight() {
             update_map_values();
         }
     }
+}
     id.value = "";
     id2.value = "";
     weight.value="";

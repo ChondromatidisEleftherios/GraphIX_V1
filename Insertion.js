@@ -66,7 +66,7 @@ async function insert_person_ns() {
     let inter=[];
     if(interests.value.trim().length!=0)
     {
-        inter=interests.value.split("/");
+        inter=interests.value.split(";");
     }
     fill_set();
     let num = 1;
