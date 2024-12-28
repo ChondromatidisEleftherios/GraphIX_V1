@@ -45,7 +45,7 @@ return m.size;
 }
 
 function find_total_connections(){
-
+return 
 }
 
 
