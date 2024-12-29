@@ -10,7 +10,7 @@ let set_for_edges= new Set();
 function insert_users_to_map()
 {
     let arr=[];
-    let data = fs.readFileSync('savedGraph.json'); // Read the file synchronously
+    let data = fs.readFileSync('random_graph.json'); // Read the file synchronously
     let obj = JSON.parse(data); // Parse the JSON data
     for ([i, j] of Object.entries(obj)) { //Μετατροπή από obj σε map
         arr = i.split(",");
@@ -19,7 +19,12 @@ function insert_users_to_map()
 }
 }
 
-async function make_graph(){
+function clearance(){
+    fs.writeFileSync("random_graph.json", "", function(){console.log('done graph')});
+    fs.writeFileSync("saved_random_ids.txt", "", function(){console.log('done ids')});
+}
+
+async function make_random_graph(){
 insert_users_to_map();
 let con=[];
 let r_con;
@@ -58,6 +63,5 @@ let temp2=[];
       avoidOverlap: 0
     }}};
     let network = new vis.Network(x, data, options);
+    clearance();
 }
-
-

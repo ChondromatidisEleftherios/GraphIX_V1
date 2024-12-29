@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="Insertu_Style.css"> 
+	<title> GraphIX - Random Users Graph </title>
+</head>
+<body>
+	<div class="input_area">
+		<label for="User1">Number of users to be generated: </label>
+		<input class="Input1" type="text" name="User1"><br><br>
+	</div>
+	<form>
+	<button class="btn1" formaction="Main_Menu.html"> Return to Main Menu </button>
+	</form>
+	<button class="btn2" onclick="make_random_generated_users()"> Submit </button>
+	<button class="btn2" onclick="rewrite()"> Save Data </button> <p> THIS WILL DELETE ALL CURRENT DATA </p>
+	<form>
+	<button class="btn2" formaction="View_random_generated_graph.html"> View Graph </button>
+	</form>
+	<p class="res"></p>
+</body>
+<script src="Generate_users.js"> </script>
+</html>

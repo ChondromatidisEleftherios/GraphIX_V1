@@ -64,21 +64,34 @@ function fill_set() {
 }
 async function insert_person_ns() {
     let inter=[];
+    let num;
+    let num2;
+    let cindex1;
+    let cindex2;
+    let characters=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     if(interests.value.trim().length!=0)
     {
         inter=interests.value.split(";");
     }
     fill_set();
-    let num = 1;
+    if ((idlist.size) < 9999){
     do {
-        num = Math.floor(Math.random() * 10001);
-        num = num.toString();
-    } while (idlist.has(num)); // Εξασφαλίζουμε ότι δεν υπάρχει ήδη το ID
-
+        num = Math.floor(Math.random() * (10000-2)+2);
+        num2 = Math.floor(Math.random() * (10000-2)+2);
+        cindex1 = Math.floor(Math.random() * characters.length);
+        cindex2 = Math.floor(Math.random() * characters.length);
+        num = (Math.abs(num2-num)).toString();
+        num = (num+characters[cindex1]+characters[cindex2]).toString();
+    } while (idlist.has(num)); // Εξασφαλίζουμε ότι δεν υπάρχει ήδη το ID.
     idlist.clear();
     idlist.add(num);
     update_id_list();
     idlist.clear();
+}
+else{
+    x.innerHTML="Max User Limit of 10000 users reached, please CLEAR YOUR DATA and try again..." 
+    return;
+}
 
     if ((name.value.trim().length === 0)&&(interests.value.trim().length === 0)) { // Έλεγχος για κενό
         m.set([num,"null","null"], [[]]);

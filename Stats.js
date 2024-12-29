@@ -1,32 +1,7 @@
 let fs = require('fs');
-let idlist = new Set();
 let m = new Map();
-let x = document.querySelector(".res1");
+let x = document.querySelector(".res");
 let y = document.querySelector(".res2");
-
-function fill_set() {
-    // Έλεγχος αν το αρχείο υπάρχει
-    if (!fs.existsSync("saved_ids.txt")) {
-        //console.log("File does not exist. The Set remains unchanged.");
-        return;
-    }
-
-    try {
-        // Ανάγνωση περιεχομένων αρχείου
-        let data = fs.readFileSync("saved_ids.txt", 'utf-8');
-
-        // Διαχωρισμός των γραμμών και προσθήκη στο Set
-        data
-            .split('\n') // Διαχωρισμός των γραμμών
-            .map(line => line.trim()) // Αφαίρεση κενών διαστημάτων από κάθε γραμμή
-            .filter(line => line !== "") // Αφαίρεση κενών γραμμών
-            .forEach(line => idlist.add(line)); // Προσθήκη κάθε γραμμής στο υπάρχον Set
-
-        console.log("Lines added to idlist:", idlist);
-    } catch (error) {
-        //console.error("Error reading the file:", error);
-    }
-}
 
 
 function insert_users_to_map(){
@@ -45,16 +20,32 @@ return m.size;
 }
 
 function find_total_connections(){
-return 
+let con=[];
+let r_con;
+let set_for_edges = new Set();
+   for ([i,j] of m){
+    for (let jj of j) {
+        if (jj[0]!=null){
+        con=[i[0],jj[0]];
+        con="["+con.toString()+"]";
+
+        if (!set_for_edges.has(con.toString())) {
+            r_con="[" + [jj[0],i[0]] + "]";
+            set_for_edges.add(r_con); // Προσθήκη του ζεύγους στο σύνολο
+        }
+      }
+    }
+}
+return set_for_edges.size;
 }
 
 
 async function caller(){
-	let total_users;
-	fill_set();
 	insert_users_to_map();
+    let total_users;
+    let total_connections;
 	total_users = find_total_users();
-	find_total_connections();
-
-
+	total_connections = find_total_connections();
+    x.innerHTML = "Total number of Users: " + total_users.toString();
+    y.innerHTML = "Total number of Connections: " + total_connections.toString();
 }
