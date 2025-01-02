@@ -26,6 +26,7 @@ function clearance(){
 
 async function make_random_graph(){
 insert_users_to_map();
+let network;
 let con=[];
 let r_con;
 let temp=[];
@@ -45,6 +46,7 @@ let temp2=[];
       }
     }
 }
+console.log("FINISHED");
     // Create a vis.js network
     let data = {
       nodes: new vis.DataSet(nodes),
@@ -55,13 +57,33 @@ let temp2=[];
     enabled: true,
     solver: "barnesHut",
     barnesHut:{
-      gravitationalConstant: -2000,
+      gravitationalConstant: -8000,
       centralGravity: 0.25,
-      springLength: 60,
-      springConstant: 0.02,
+      springLength: 200,
+      springConstant: 0.05,
       damping: 0.09,
       avoidOverlap: 0
     }}};
-    let network = new vis.Network(x, data, options);
+    console.log("graph size",m.size);
+    if(m.size < 70){
+        network = new vis.Network(x, data, options);
+        network.stabilize(m.size);
+    }
+    else if ((m.size >= 70)&&(m.size < 400)){
+        network = new vis.Network(x, data, options);
+        network.stabilize(Math.floor((m.size)/2));
+    }
+    else if ((m.size >= 400)&&(m.size < 1500 )){
+        network = new vis.Network(x, data, options);
+        network.stabilize(Math.floor((m.size)/4));
+    }
+    else if ((m.size >= 1500)&&(m.size < 4500)){
+        network = new vis.Network(x, data, options);
+        network.stabilize(Math.floor((m.size)/6));
+    }
+    else if ((m.size >= 4500) && (m.size < 10000)){
+    network = new vis.Network(x, data, options);
+    network.stabilize(Math.floor((m.size)/12));
+}
     clearance();
 }

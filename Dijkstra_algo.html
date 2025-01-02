@@ -4,22 +4,23 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="Insertu_Style.css"> 
-	<title> GraphIX - Random Users Graph </title>
+	<title> GraphIX - Dijkstra Algorithm </title>
 </head>
 <body>
 	<div class="input_area">
-		<label for="User1">Number of users to be generated: </label>
+		<label for="User1">ID of Starting User: </label>
 		<input class="Input1" type="text" name="User1"><br><br>
+		<label for="User2">ID of Target User: </label>
+		<input class="Input2" type="text" name="User2"><br><br>
 	</div>
 	<form>
 	<button class="btn1" formaction="Main_Menu.html"> Return to Main Menu </button>
 	</form>
-	<button class="btn2" onclick="make_random_generated_users()"> Submit </button>
-	<button class="btn2" onclick="rewrite()"> Save Data </button> <p> THIS WILL CLEAR ALL CURRENT DATA </p>
+	<button class="btn2" onclick="apply_dijkstra()"> Submit </button>
 	<form>
-	<button class="btn2" formaction="View_random_generated_graph.html"> View Graph </button>
+	<button class="btn2" formaction="Run_Dijkstra.html"> View Result </button>
 	</form>
 	<p class="res"></p>
 </body>
-<script src="Generate_users.js"> </script>
+<script src="Dijkstra_shortest_paths.js"> </script>
 </html>
