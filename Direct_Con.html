@@ -6,16 +6,26 @@
 	<link rel="stylesheet" href="Insertu_Style.css"> 
 	<title> GraphIX - Direct Connections </title>
 </head>
-<body>
+<body onload="read_all_users()">
+	<div class="container">
 	<div class="input_area">
-		<label for="User1">ID of User: </label>
-		<input class="Input1" type="text" name="User1"><br><br>
+		<label for="User1"><strong>ID of User: </strong></label>
+		<input class="Input1" type="text" name="User1">
 	</div>
+	<div class="button_area">
 	<form>
 	<button class="btn1" formaction="Main_Menu.html"> Return to Main Menu </button>
 	</form>
 	<button class="btn2" onclick="find_direct_connections()"> Submit </button>
+	<button class="btn2" onclick="read_all_users()"> View Listing </button>
+</div>
 	<p class="res"></p>
+</div>
+<div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="test.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
 <script src="Direct.js"> </script>
 </html>

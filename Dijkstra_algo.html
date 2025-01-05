@@ -6,13 +6,15 @@
 	<link rel="stylesheet" href="Insertu_Style.css"> 
 	<title> GraphIX - Dijkstra Algorithm </title>
 </head>
-<body>
-	<div class="input_area">
-		<label for="User1">ID of Starting User: </label>
-		<input class="Input1" type="text" name="User1"><br><br>
-		<label for="User2">ID of Target User: </label>
-		<input class="Input2" type="text" name="User2"><br><br>
+<body onload="read_all_users()">
+	<div class="container">
+		<div class="input_area">
+		<label for="User1"><strong>ID of Starting User: </strong></label>
+		<input class="Input1" type="text" name="User1">
+		<label for="User2"><strong>ID of Target User: </strong></label>
+		<input class="Input2" type="text" name="User2">
 	</div>
+	<div class="button_area">
 	<form>
 	<button class="btn1" formaction="Main_Menu.html"> Return to Main Menu </button>
 	</form>
@@ -20,7 +22,14 @@
 	<form>
 	<button class="btn2" formaction="Run_Dijkstra.html"> View Result </button>
 	</form>
+</div>
 	<p class="res"></p>
+</div>
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="test.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
 <script src="Dijkstra_shortest_paths.js"> </script>
 </html>

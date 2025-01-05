@@ -100,6 +100,10 @@ function clearance(){
 	fs.writeFileSync("saved_ids.txt", "", function(){console.log('done ids')});
 }
 
+function clearance_random(){
+    fs.writeFileSync("random_graph.json", "", function(){console.log('done graph')});
+    fs.writeFileSync("saved_random_ids.txt", "", function(){console.log('done ids')});
+}
 function connect_random_users() {
     let idlista = Array.from(idlist); // Λίστα των χρηστών
     let us_numm = parseInt(u_num.value); // Ο αριθμός των χρηστών που θα συνδεθούν
@@ -184,13 +188,11 @@ fill_set();
 insert_users_to_map();
 save_users_off();
 update_id_list_off();
-
 }
 
 async function make_random_generated_users(){
-	let us_num=parseInt(u_num.value);
-	console.log("user num is ", us_num);
-
+    clearance_random();
+    let us_num=parseInt(u_num.value);
 	if ((us_num < 2)||((us_num > 9999))){
 		x.innerHTML = "The accepted range is (2,9999) users.";
 	}

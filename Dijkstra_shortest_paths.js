@@ -5,6 +5,41 @@ let id2 = document.querySelector(".Input2");
 let idlist = new Set();
 let graph = new Map();
 let optimalPath = [];
+let new_window = null;
+
+function read_all_users(){
+     if (new_window && !new_window.closed) {
+                new_window.close();
+            }
+try {
+    let data = fs.readFileSync("savedGraph.json", 'utf8');
+
+    new_window = window.open('', '_blank');
+
+    if (new_window) {
+        // Γέμισμα του νέου παραθύρου με HTML
+        new_window.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>GraphIX - View all Users </title>
+                <style>
+                </style>
+            </head>
+            <body>
+                <p> All Users and their Connections:  </p>
+                <pre>${data}</pre>
+            </body>
+            </html>
+        `);
+        new_window.document.close();
+    }
+} catch (err) {
+}
+}
+
 
 
 
@@ -134,7 +169,9 @@ async function apply_dijkstra(){
     }
     else{
         x.innerHTML = "Finished!";
-    optimalPath.push(costs.get(end_choice))
+    let rounded=costs.get(end_choice);
+    rounded = Math.round(rounded*100)/100;
+    optimalPath.push(rounded);
     save_shortest_path();
     console.log(optimalPath);
     }

@@ -6,18 +6,28 @@
 	<link rel="stylesheet" href="Insertu_Style.css"> 
 	<title> GraphIX - Connect Users </title>
 </head>
-<body>
+<body onload="read_all_users()">
+	<div class="container">
 	<div class="input_area">
-		<label for="User1">ID of User 1: </label>
-		<input class="Input1" type="text" name="User1"><br><br>
-		<label for="User2">ID of User 2: </label>
-		<input class="Input2" type="text" name="User2"><br><br>
+		<label for="User1"><strong> ID of User 1: </strong> </label>
+		<input class="Input1" type="text" name="User1">
+		<label for="User2"> <strong> ID of User 2: </strong> </label>
+		<input class="Input2" type="text" name="User2">
 	</div>
+	<div class="button_area">
 	<form>
 	<button class="btn1" formaction="Main_Menu.html"> Return to Main Menu </button>
 	</form>
 	<button class="btn2" onclick="connect_users()"> Submit </button>
-	<p class="res"></p>
+	<button class="btn2" onclick="read_all_users()"> Update Listing </button>
+</div>
+<p class="res"></p>
+</div>
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="test.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
 <script src="Connection.js"> </script>
 </html>

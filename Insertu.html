@@ -2,22 +2,31 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="Insertu_Style.css"> 
 	<title> GraphIX - Insert New User </title>
 </head>
 <body>
-	<div class="input_area">
-		<label for="Name">Name : </label>
-		<input class="Input1" type="text" name="Name"><br><br>
-		<label for="Interests">Interests (p.x Soccer;Hockey;Gaming): </label>
-		<input class="Input2" type="text" name="Interests"><br><br>
+	<div class="container">
+		<div class="input_area">
+			<label for="Name"> <strong> Name: </strong> </label>
+			<input class="Input1" type="text" name="Name">
+			<label for="Interests"> <strong> Interests  (e.g., Soccer;Hockey;Gaming): </strong> </label>
+			<input class="Input2" type="text" name="Interests">
+		</div>
+		<div class="button_area">
+			<form>
+				<button class="btn1" formaction="Main_Menu.html">Return to Main Menu</button>
+			</form>
+			<button class="btn2" onclick="insert_person_ns()">Submit</button>
+		</div>
+        <p class="res"></p>
 	</div>
-	<form>
-	<button class="btn1" formaction="Main_Menu.html"> Return to Main Menu </button>
-	</form>
-	<button class="btn2" onclick="insert_person_ns()"> Submit </button>
-	<p class="res"></p>
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="test.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
-<script src="Insertion.js"> </script>
+<script src="Insertion.js"></script>
 </html>
