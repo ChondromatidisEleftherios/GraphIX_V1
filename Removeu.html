@@ -6,16 +6,27 @@
 	<link rel="stylesheet" href="Insertu_Style.css"> 
 	<title> GraphIX - Remove User </title>
 </head>
-<body>
+<body onload="read_all_users()">
+	<div class="container">
 	<div class="input_area">
-		<label for="Name">ID of User you wish to Remove : </label>
+		<label for="Name"><strong>ID of User you wish to Remove: </strong></label>
 		<input class="Input1" type="text" name="Name"><br><br>
 	</div>
+	<div class="button_area">
 	<form>
 	<button class="btn1" formaction="Main_Menu.html"> Return to Main Menu </button>
 	</form>
 	<button class="btn2" onclick="remove_person_ns()"> Submit </button>
+	<button class="btn2" onclick="read_all_users()"> Update Listing </button>
+</div>
 	<p class="res"></p>
+</div>
+	<div class="Allusers"></div>
+	 <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="test.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
 <script src="Removal.js"> </script>
 </html>
