@@ -20,7 +20,7 @@ body {
 }
 
 .logo {
-	width: 480px; /* Adjust logo width as needed */
+	width: 480px; 
 	height: 120px;
 }
 
@@ -128,12 +128,12 @@ a {
 
 @media (max-width: 768px) {
 	.cont {
-		flex-direction: column; /* Stack buttons vertically on smaller screens */
+		flex-direction: column; 
 		align-items: center;
 	}
 
 	.btn1, .btn2, .btn3, .btn4 {
-		width: 80%; /* Make buttons take up more width */
+		width: 80%; 
 	}
 
 	.bottom, .bottom2 {
@@ -146,7 +146,7 @@ a {
 
 @media (max-width: 480px) {
 	.btn1, .btn2, .btn3, .btn4 {
-		width: 90%; /* Further increase button width on very small screens */
+		width: 90%; 
 		font-size: 16px;
 	}
 }
