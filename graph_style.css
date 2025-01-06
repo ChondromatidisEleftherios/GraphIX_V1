@@ -11,16 +11,14 @@ body
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid darkorchid;
-  width: 700px;
-  height: 300px;
+  border: 10px solid #32226e;
+  height: 450px;
 }
 
 
 .network {
   display: flex;
-  width: 700px;
-  height: 300px;
+  height: 452px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,5 +46,12 @@ body
     height: 70px; 
     width: 183px; 
     font-size: 16px;
+}
+
+.exit{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 

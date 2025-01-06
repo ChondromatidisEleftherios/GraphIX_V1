@@ -105,15 +105,16 @@ function clearance_random(){
     fs.writeFileSync("saved_random_ids.txt", "", function(){console.log('done ids')});
 }
 function connect_random_users() {
-    let idlista = Array.from(idlist); // Λίστα των χρηστών
-    let us_numm = parseInt(u_num.value); // Ο αριθμός των χρηστών που θα συνδεθούν
+    let idlista = Array.from(idlist); 
+    let us_numm = parseInt(u_num.value); 
     let n1, n2, weight;
     let x = 0;
     while (x < Math.floor(us_numm / (3 / 2))) {
         let n1 = idlista[Math.floor(Math.random() * idlista.length)];
         let n2 = idlista[Math.floor(Math.random() * idlista.length)];
-        weight = Math.random() * 1; // Τυχαίο βάρος μεταξύ 0 και 1
-        weight = Math.round(weight * 100) / 100; // Στρογγυλοποίηση στα 2 δεκαδικά
+        weight = Math.random() * 1;
+        if (!(weight<0.01)){
+        weight = Math.round(weight * 100) / 100; 
         weight = weight.toString();
         n1=n1.toString();
         n2=n2.toString();
@@ -152,6 +153,7 @@ function connect_random_users() {
                     console.log("b");
                 }
             }
+        }
 }
 }
 }

@@ -25,6 +25,10 @@ try {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>GraphIX - View all Users </title>
                 <style>
+                body,html{
+                    background-color: #0c184c;
+                    color: cyan;
+                }
                 </style>
             </head>
             <body>

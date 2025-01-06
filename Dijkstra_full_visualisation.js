@@ -27,12 +27,12 @@ function get_shortest_path(){
 
 function insert_users_to_map(){
     let arr=[];
-    let data = fs.readFileSync('savedGraph.json'); // Read the file synchronously
-    let obj = JSON.parse(data); // Parse the JSON data
-    for ([i, j] of Object.entries(obj)) { //Μετατροπή από obj σε map
+    let data = fs.readFileSync('savedGraph.json'); 
+    let obj = JSON.parse(data); 
+    for ([i, j] of Object.entries(obj)) { 
         arr = i.split(",");
-        m.delete(i); // Remove the old key
-        m.set(arr, j); // Set the new key as an arra
+        m.delete(i);
+        m.set(arr, j); 
 }
 }
 
@@ -44,7 +44,7 @@ let r_con;
 let temp=[];
 let temp2=[];
    for ([i,j] of m){
-        nodes.push({ id: i[0], label: i[0], color: "#00ecfc" }); // Add nodes using names as IDs
+            nodes.push({ id: i[0], label: i[0], color: "#00ecfc" });
     for (let jj of j) {
         if (jj[0]!=null){
         con=[i[0],jj[0]];
@@ -57,7 +57,7 @@ let temp2=[];
             else{edges.push({ from: i[0], to: jj[0], width: (parseFloat(jj[1])*10), color: { color: "#4a1abf" }});
         }
             r_con="[" + [jj[0],i[0]] + "]";
-            set_for_edges.add(r_con); // Προσθήκη του ζεύγους στο σύνολο
+            set_for_edges.add(r_con); 
         }
       }
     }
